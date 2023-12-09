@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Example.CORE.Database;
 using Example.CORE.Enums;
-
+using Example.Entity.ComplexType;
 
 namespace Example.Entity.Entity
 {
@@ -20,8 +20,40 @@ namespace Example.Entity.Entity
         public Color VehicleColor { get; set; }
         public  LightStatuType Light { get; set; }
         public int UserID { get; set; }
-        public string Mark { get; set; }
-        public string Model { get; set; }
-        public int ModelYear { get; set; }
+        public bool Wheels { get; set; }
+
+        public static implicit operator Vehicles(Car v)
+        {
+            return new Vehicles
+            {
+                Light = v.Light,
+                VehicleType = VehicleType.Car,
+                VehicleColor = v.Color,
+                Wheels = v.Wheels 
+
+
+
+            };
+        }
+
+
+
+
+        public static implicit operator Vehicles(Vehicle v)
+        {
+            return new Vehicles
+            {
+                
+                VehicleType = VehicleType.Car,
+                VehicleColor = v.Color,
+               
+
+
+
+            };
+        }
+
+
+         
     }
 }

@@ -64,7 +64,8 @@ namespace Example.CORE.Concrate
         {
             using (var context = new Y())
             {
-                var Entry = context.Set<T>().FirstOrDefault();
+                var Entry = context.Set<T>().FirstOrDefault(expression);
+                if(Entry != null)
                 context.Set<T>().Remove(Entry);
                 context.SaveChanges();
                 return Entry;

@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Example.Entity.Entity;
 using Example.CORE.Enums;
 using Example.CORE.Model;
+using Example.Entity.ComplexType;
 
 namespace Example.BussinesLayer.Abstract
 {
     public interface IVehicles
     {
 
-        public ServiceResult<List<Vehicles>> GetVehiclesByColor(Color Color,VehicleType VehicleType);
-        public ServiceResult<bool> togglelights(int ID, VehicleType VehicleType);
-        public ServiceResult<Vehicles> addVehicle(Vehicles Model);
-        public ServiceResult<Vehicles> RemoveVehicle(int ID, VehicleType VehicleType);
+        public ServiceResult<List<T>> GetVehiclesByColor<T>(Color Color);
+        public ServiceResult<List<T>> getAll<T>();
+        public ServiceResult<T> get<T>(int ID);
+        public ServiceResult<T> togglelights<T>(int ID);
+        public ServiceResult<T> addVehicle<T>(T Model);
+        public ServiceResult<T> RemoveVehicle<T>(int ID);
 
     }
 }

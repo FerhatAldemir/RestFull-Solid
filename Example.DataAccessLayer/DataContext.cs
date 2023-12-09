@@ -29,7 +29,7 @@ namespace Example.DataAccessLayer
              
            
 
-            optionsBuilder.UseSqlServer(Settings.ConnectionString);
+            optionsBuilder.UseSqlServer(Settings.Instance.ConnectionString);
 
 
         }

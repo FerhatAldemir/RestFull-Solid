@@ -48,7 +48,8 @@ public static class Extensions
 
 
         var Config = IOC.BuildServiceProvider().GetRequiredService<IConfiguration>();
-        Example.DataAccessLayer.Settings.ConnectionString = Config.GetConnectionString("DefaultConnection");
+        
+        Settings.Instance.ConnectionString = Config.GetConnectionString("DefaultConnection");
 
         var Check = IOC.BuildServiceProvider().GetRequiredService<ICheckDataBase>();
 

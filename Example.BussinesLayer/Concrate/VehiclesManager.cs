@@ -3,6 +3,7 @@ using Example.CORE.Enums;
 using Example.CORE.Exception;
 using Example.CORE.Model;
 using Example.Entity.ComplexType;
+using Microsoft.Extensions.DependencyInjection;
 using Example.Entity.Entity;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -30,7 +31,7 @@ namespace Example.BussinesLayer.Concrate
             try
             {
 
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
 
 
                 return ServiceResult<T>.SuccessResult(Provider.addVehicle(Model), "Ekleme İşlemi Başarılı Oldu");
@@ -51,18 +52,13 @@ namespace Example.BussinesLayer.Concrate
 
         }
 
-        public Vehicle test()
-        {
-
-            return new Car();
-
-        }
+      
 
         public ServiceResult<List<T>> GetVehiclesByColor<T>(Color Color)
         {
             try
             {
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
 
                 var Data = Provider.GetVehiclesByColor(Color).OfType<T>();
 
@@ -89,7 +85,7 @@ namespace Example.BussinesLayer.Concrate
 
             try
             {
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
                 string Message = "";
                 var RemovedItem = Provider.RemoveVehicle(ID, out Message);
 
@@ -119,7 +115,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
                 var Message = "";
                 var Item = Provider.togglelights(ID, out Message);
 
@@ -149,7 +145,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
                 string Message = "";
                 var Data = Provider.GetALL(out Message).OfType<T>();
 
@@ -174,7 +170,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
+                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
                 string Message = "";
                 var Data = Provider.Get(ID,out Message);
 

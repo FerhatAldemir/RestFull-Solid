@@ -31,6 +31,9 @@ public static class Extensions
 
         return Convert.ToInt32(UserId);
     }
+
+
+
     public static void SetIOC(this IServiceCollection IOC)
     { 
 

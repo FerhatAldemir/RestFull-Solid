@@ -19,30 +19,36 @@ public static class Extensions
 
     public static bool CheckEnumField(this Enum Item)
     {
-      var Values =  Enum.GetValues(Item.GetType());
-       var Enums =Values.Cast<Enum>().Select(x => x.GetType().GetField(x.ToString()).GetValue(x.ToString())).ToList();
-      return Enums.Any(x => x.ToString() == Item.ToString());
+        var Values = Enum.GetValues(Item.GetType());
+        var Enums = Values.Cast<Enum>().Select(x => x.GetType().GetField(x.ToString()).GetValue(x.ToString())).ToList();
+        return Enums.Any(x => x.ToString() == Item.ToString());
     }
-    public static int GetUserId(this HttpContext context) {
+    public static int GetUserId(this HttpContext context)
+    {
 
-       var UserId = context.User.Claims.FirstOrDefault(x=>x.Type == "ID").Value;
+        var UserId = context.User.Claims.FirstOrDefault(x => x.Type == "ID").Value;
 
         return Convert.ToInt32(UserId);
     }
     public static void SetIOC(this IServiceCollection IOC)
-    {
-       
-        IOC.AddScoped<IUserRepoStory,UserRepoStoryManager>();
-        IOC.AddScoped<IUserService,UserManager>();
+    { 
+
+        IOC.AddScoped<IUserRepoStory, UserRepoStoryManager>();
+        IOC.AddScoped<IUserService, UserManager>();
         IOC.AddScoped<IVehiclesRepoStory, VehiclesRepoStoryManager>();
         IOC.AddScoped<IVehicles, VehiclesManager>();
+        IOC.AddScoped<ICheckDataBase, CheckDataBase>();
         IOC.AddScoped<CarManager>();
         IOC.AddScoped<BusManager>();
         IOC.AddScoped<BoatManager>();
 
 
         var Config = IOC.BuildServiceProvider().GetRequiredService<IConfiguration>();
-       Example.DataAccessLayer.Settings.ConnectionString = Config.GetConnectionString("DefaultConnection");
+        Example.DataAccessLayer.Settings.ConnectionString = Config.GetConnectionString("DefaultConnection");
+
+        var Check = IOC.BuildServiceProvider().GetRequiredService<ICheckDataBase>();
+
+        Check.CheckDb();
 
 
 

@@ -15,13 +15,14 @@ namespace Example.BussinesLayer.Concrate
 {
     public class VehiclesManager : IVehicles
     {
-        readonly Dictionary<Type, dynamic> VehiclesProviders;
+         
+
+        public IServiceProvider ServiceProvider { get; }
+
         public VehiclesManager(IServiceProvider serviceProvider)
         {
-            VehiclesProviders = new Dictionary<Type, dynamic>();
-            VehiclesProviders.Add(typeof(Car), serviceProvider.GetService(typeof(CarManager)));
-            VehiclesProviders.Add(typeof(Boat), serviceProvider.GetService(typeof(BoatManager)));
-            VehiclesProviders.Add(typeof(Bus), serviceProvider.GetService(typeof(BusManager)));
+          
+            ServiceProvider = serviceProvider;
         }
 
         public ServiceResult<T> addVehicle<T>(T Model)
@@ -29,7 +30,7 @@ namespace Example.BussinesLayer.Concrate
             try
             {
 
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
 
 
                 return ServiceResult<T>.SuccessResult(Provider.addVehicle(Model), "Ekleme İşlemi Başarılı Oldu");
@@ -61,7 +62,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
 
                 var Data = Provider.GetVehiclesByColor(Color).OfType<T>();
 
@@ -88,7 +89,7 @@ namespace Example.BussinesLayer.Concrate
 
             try
             {
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
                 string Message = "";
                 var RemovedItem = Provider.RemoveVehicle(ID, out Message);
 
@@ -118,7 +119,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
                 var Message = "";
                 var Item = Provider.togglelights(ID, out Message);
 
@@ -148,7 +149,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
                 string Message = "";
                 var Data = Provider.GetALL(out Message).OfType<T>();
 
@@ -173,7 +174,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = VehiclesProviders[typeof(T)];
+                IVehicleFactory<T> Provider = (IVehicleFactory<T>)ServiceProvider.GetService(typeof(IVehicleFactory<T>));
                 string Message = "";
                 var Data = Provider.Get(ID,out Message);
 

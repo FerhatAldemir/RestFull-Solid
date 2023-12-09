@@ -13,6 +13,7 @@ using Example.DataAccessLayer.Concrate;
 using Example.BussinesLayer.Abstract;
 using Example.BussinesLayer.Concrate;
 using Microsoft.AspNetCore.Http;
+using Example.Entity.ComplexType;
 
 public static class Extensions
 {
@@ -38,9 +39,9 @@ public static class Extensions
         IOC.AddScoped<IVehiclesRepoStory, VehiclesRepoStoryManager>();
         IOC.AddScoped<IVehicles, VehiclesManager>();
         IOC.AddScoped<ICheckDataBase, CheckDataBase>();
-        IOC.AddScoped<CarManager>();
-        IOC.AddScoped<BusManager>();
-        IOC.AddScoped<BoatManager>();
+        IOC.AddScoped<IVehicleFactory<Car>,CarManager>();
+        IOC.AddScoped<IVehicleFactory<Bus>,BusManager>();
+        IOC.AddScoped<IVehicleFactory<Boat>, BoatManager>();
 
 
         var Config = IOC.BuildServiceProvider().GetRequiredService<IConfiguration>();

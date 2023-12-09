@@ -22,4 +22,6 @@ namespace Example.BussinesLayer.Abstract
         public List<T> GetALL(out string Message);
         public T Get(int ID, out string Message);
     }
+
+
 }

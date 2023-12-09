@@ -134,7 +134,7 @@ namespace Example.BussinesLayer.Concrate
             catch (Exception ex)
             {
 
-                return ServiceResult<T>.FailureResult("Farlar Kapatıldı");
+                return ServiceResult<T>.FailureResult("Far Açma Kapama İşlemi Başarısız Oldu");
 
             }
 

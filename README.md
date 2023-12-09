@@ -27,4 +27,4 @@ code first
 <br/>
 ef code first desnine göre önce kod yazılıp daha sonra data oluşturuldu
 <br/>
-Lütfen Projeyi Çalıştırmadan Önce appsetting.json dosyasındaki ConnectionStrings.Defaultconnection tag değerini mssql server bilgilerinizi giriniz
+Not : Mssql server ayarları appsetting.json dosyasındaki ConnectionStrings.Defaultconnection tag değerinde bulunmaktadır..

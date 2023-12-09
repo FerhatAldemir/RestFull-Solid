@@ -21,8 +21,6 @@ Abstract Factory Desing Patern
 <br/>
 IvehicleFactory arayüznden sadece bir türde Araçlar Oluşturduk
 <br/>
-Strateji Patern
-<br/>
 İşlem Yapılan Providere Ulaşdık
 <br/>
 code first 

@@ -62,7 +62,7 @@ namespace Example.BussinesLayer.Concrate
             {
                 IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
 
-                var Data = Provider.GetVehiclesByColor(Color).OfType<T>();
+                var Data = Provider.GetVehiclesByColor(Color);
 
                 return Acx.SuccessResult(Data.ToList(), "", System.Net.HttpStatusCode.OK);
 
@@ -149,7 +149,7 @@ namespace Example.BussinesLayer.Concrate
             {
                 IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
                 string Message = "";
-                var Data = Provider.GetALL(out Message).OfType<T>();
+                var Data = Provider.GetALL(out Message);
 
                 return Acx.SuccessResult(Data.ToList(), Message, System.Net.HttpStatusCode.OK);
 

@@ -43,7 +43,7 @@ Her bir metoda Sadece bir iş verildi
 <br/>
 2.Open/Closed 
 <br/>
-Araç Türlerinin Metot içerisinde belirleyerek işlemler yaptırdık buda bize metodun değişime kapalı geliştirmeye açık bırakılma prensibini karşılaşmış oldu
+metotların işlevselşiğini değiştirmeden Araç Türünün özelliklerine göre işlemler yaptırdık buda bize metodun değişime kapalı geliştirmeye açık bırakılma prensibini karşılaşmış oldu
 <br/>
 3.Liskov Substitution Prensibi
 <br/>

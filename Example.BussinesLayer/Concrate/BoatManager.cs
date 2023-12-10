@@ -48,7 +48,7 @@ namespace Example.BussinesLayer.Concrate
             IEnumerable<Boat> Vehicles = VehiclesRepoStory.GetAll(x => x.VehicleType == VehicleType.Boat && x.UserID == UserId).Select(x => (Boat)x);
             if (!Vehicles.Any()) throw new undefinedException("Tekne Türünde bir Araç Bulunamadı");
             Message = "Tekne Türündeki Tüm Araçlar";
-            return Vehicles.ToList();
+            return Vehicles;
         }
 
         public IEnumerable<Boat> GetVehiclesByColor(Color Color)

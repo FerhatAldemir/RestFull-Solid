@@ -43,21 +43,21 @@ namespace Example.BussinesLayer.Concrate
             return Vehicles;
         }
 
-        public List<Bus> GetALL(out string Message)
+        public IEnumerable<Bus> GetALL(out string Message)
         {
             int UserId = acx.HttpContext.GetUserId();
             IEnumerable<Bus> Vehicles = VehiclesRepoStory.GetAll(x => x.VehicleType == VehicleType.Bus && x.UserID == UserId).Select(x => (Bus)x);
             if (!Vehicles.Any()) throw new undefinedException("Otobüs Türünde bir Araç Bulunamadı");
             Message = "Otobüs Türündeki Tüm Araçlar";
-            return Vehicles.ToList();
+            return Vehicles;
         }
 
-        public  List<Bus> GetVehiclesByColor(Color Color)
+        public IEnumerable<Bus> GetVehiclesByColor(Color Color)
         {
             int UserId = acx.HttpContext.GetUserId();
             IEnumerable<Bus> Vehicles = VehiclesRepoStory.GetAll(x => x.VehicleType == VehicleType.Bus && x.VehicleColor == Color && x.UserID == UserId).Select(x=> (Bus)x);
             if (!Vehicles.Any()) throw new undefinedException("Otobüs Türünde bir Araç Bulunamadı");
-            return Vehicles.ToList();
+            return Vehicles;
         }
 
  

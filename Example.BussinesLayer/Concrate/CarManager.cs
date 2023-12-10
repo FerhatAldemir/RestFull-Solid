@@ -34,13 +34,13 @@ namespace Example.BussinesLayer.Concrate
             return TableModel;
         }
 
-        public List<Car> GetVehiclesByColor(Color Color)
+        public IEnumerable<Car> GetVehiclesByColor(Color Color)
         {
 
             int UserId = acx.HttpContext.GetUserId();
             IEnumerable<Car> Vehicles = VehiclesRepoStory.GetAll(x => x.VehicleType == VehicleType.Car && x.VehicleColor == Color && x.UserID == UserId).Select(x=> (Car)x);
             if (!Vehicles.Any())throw new undefinedException("Araba Türünde bir Araç Bulunamadı");
-            return Vehicles.ToList();
+            return Vehicles;
 
 
         }
@@ -55,13 +55,13 @@ namespace Example.BussinesLayer.Concrate
             return Vehicles;
         }
 
-        public List<Car> GetALL(out string Message)
+        public IEnumerable<Car> GetALL(out string Message)
         {
             int UserId = acx.HttpContext.GetUserId();
             IEnumerable<Car> Vehicles = VehiclesRepoStory.GetAll(x => x.VehicleType == VehicleType.Car && x.UserID == UserId).Select(x => (Car)x);
             if (!Vehicles.Any()) throw new undefinedException("Araba Türünde bir Araç Bulunamadı");
             Message = "Araba Türündeki Tüm Araçlar";
-            return Vehicles.ToList();
+            return Vehicles;
         }
 
         public Car RemoveVehicle(int ID,out string Message)

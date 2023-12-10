@@ -13,8 +13,8 @@ namespace Example.BussinesLayer.Abstract
     public interface IVehicles
     {
 
-        public ServiceResult<List<T>> GetVehiclesByColor<T>(Color Color);
-        public ServiceResult<List<T>> getAll<T>();
+        public ServiceResult<IEnumerable<T>> GetVehiclesByColor<T>(Color Color);
+        public ServiceResult<IEnumerable<T>> getAll<T>();
         public ServiceResult<T> get<T>(int ID);
         public ServiceResult<T> togglelights<T>(int ID);
         public ServiceResult<T> addVehicle<T>(Vehicle Model) where T : Vehicle;

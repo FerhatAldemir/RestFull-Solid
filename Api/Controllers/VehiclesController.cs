@@ -22,24 +22,24 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public ServiceResult<List<Car>> getAllCar() => Vehicles.getAll<Car>();
+        public ServiceResult<IEnumerable<Car>> getAllCar() => Vehicles.getAll<Car>();
         [HttpGet("{ID:int}")]
         public ServiceResult<Car> getCar(int ID) => Vehicles.get<Car>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Car>> getCarsByColor(Color color) => Vehicles.GetVehiclesByColor<Car>(color);
+        public ServiceResult<IEnumerable<Car>> getCarsByColor(Color color) => Vehicles.GetVehiclesByColor<Car>(color);
         [HttpGet]
-        public ServiceResult<List<Bus>> getAllBus() => Vehicles.getAll<Bus>();
+        public ServiceResult<IEnumerable<Bus>> getAllBus() => Vehicles.getAll<Bus>();
         [HttpGet("{ID:int}")]
         public ServiceResult<Bus> getBus(int ID) => Vehicles.get<Bus>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Bus>> getBusesByColor(Color color) => Vehicles.GetVehiclesByColor<Bus>(color);
+        public ServiceResult<IEnumerable<Bus>> getBusesByColor(Color color) => Vehicles.GetVehiclesByColor<Bus>(color);
 
         [HttpGet]
-        public ServiceResult<List<Boat>> getAllBoat() => Vehicles.getAll<Boat>();
+        public ServiceResult<IEnumerable<Boat>> getAllBoat() => Vehicles.getAll<Boat>();
         [HttpGet("{ID:int}")]
         public ServiceResult<Boat> getBoat(int ID) => Vehicles.get<Boat>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Boat>> getBoatsByColor(Color color) => Vehicles.GetVehiclesByColor<Boat>(color);
+        public ServiceResult<IEnumerable<Boat>> getBoatsByColor(Color color) => Vehicles.GetVehiclesByColor<Boat>(color);
 
 
 

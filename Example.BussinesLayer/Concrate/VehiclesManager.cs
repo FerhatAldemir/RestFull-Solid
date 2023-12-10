@@ -56,7 +56,7 @@ namespace Example.BussinesLayer.Concrate
 
       
 
-        public ServiceResult<List<T>> GetVehiclesByColor<T>(Color Color)
+        public ServiceResult<IEnumerable<T>> GetVehiclesByColor<T>(Color Color)
         {
             try
             {
@@ -64,19 +64,19 @@ namespace Example.BussinesLayer.Concrate
 
                 var Data = Provider.GetVehiclesByColor(Color);
 
-                return Acx.SuccessResult(Data.ToList(), "", System.Net.HttpStatusCode.OK);
+                return Acx.SuccessResult(Data, "", System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
 
-                return Acx.FailureResult<List<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
+                return Acx.FailureResult<IEnumerable<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch
             {
 
-                return Acx.FailureResult<List<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
+                return Acx.FailureResult<IEnumerable<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
 
@@ -143,7 +143,7 @@ namespace Example.BussinesLayer.Concrate
 
         }
 
-        public ServiceResult<List<T>> getAll<T>()
+        public ServiceResult<IEnumerable<T>> getAll<T>()
         {
             try
             {
@@ -151,19 +151,19 @@ namespace Example.BussinesLayer.Concrate
                 string Message = "";
                 var Data = Provider.GetALL(out Message);
 
-                return Acx.SuccessResult(Data.ToList(), Message, System.Net.HttpStatusCode.OK);
+                return Acx.SuccessResult(Data, Message, System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
 
-                return Acx.FailureResult<List<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
+                return Acx.FailureResult<IEnumerable<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch
             {
 
-                return Acx.FailureResult<List<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
+                return Acx.FailureResult<IEnumerable<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
         }

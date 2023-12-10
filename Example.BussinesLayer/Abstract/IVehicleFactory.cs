@@ -15,10 +15,10 @@ namespace Example.BussinesLayer.Abstract
 {
     public interface IVehicleFactory<T>
     {
-        public  List<T> GetVehiclesByColor(Color Color);
+        public  IEnumerable<T> GetVehiclesByColor(Color Color);
       
         public T addVehicle(Vehicle Model);  
-        public List<T> GetALL(out string Message);
+        public IEnumerable<T> GetALL(out string Message);
         public T Get(int ID, out string Message);
     }
 

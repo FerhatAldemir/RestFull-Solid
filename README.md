@@ -3,6 +3,8 @@ Kullanılan Teknolojiler
 Net Core 6
 <br/>
 Ef Core 6
+<br />
+JWT
 
 Proje 4 Katmandan Oluşmaktadır
 <br/>

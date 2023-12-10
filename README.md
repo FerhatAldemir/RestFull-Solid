@@ -1,4 +1,5 @@
 Türkçe
+<br/>
 Kullanılan Teknolojiler
 <br/>
 Net Core 6

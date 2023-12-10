@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "aadee0dc-1914-408b-98f5-5ec857d421b6",
+		"_postman_id": "1c3621a5-05ab-48a5-adf0-9806e1382c6d",
 		"name": "ExampleApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "7860286"
@@ -114,12 +114,12 @@
 											"variable": [
 												{
 													"key": "UserName",
-													"value": "<string>",
+													"value": "test",
 													"description": "(Required) "
 												},
 												{
 													"key": "Password",
-													"value": "<string>",
+													"value": "test",
 													"description": "(Required) "
 												}
 											]

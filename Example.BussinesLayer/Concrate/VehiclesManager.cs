@@ -19,11 +19,13 @@ namespace Example.BussinesLayer.Concrate
          
 
         public IServiceProvider ServiceProvider { get; }
+        public IHttpContextAccessor Acx { get; }
 
-        public VehiclesManager(IServiceProvider serviceProvider)
+        public VehiclesManager(IServiceProvider serviceProvider, IHttpContextAccessor acx)
         {
           
             ServiceProvider = serviceProvider;
+            Acx = acx;
         }
 
         public ServiceResult<T> addVehicle<T>(T Model)
@@ -34,18 +36,18 @@ namespace Example.BussinesLayer.Concrate
                 IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
 
 
-                return ServiceResult<T>.SuccessResult(Provider.addVehicle(Model), "Ekleme İşlemi Başarılı Oldu");
+                return Acx.SuccessResult(Provider.addVehicle(Model), "Ekleme İşlemi Başarılı Oldu",System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException ex)
             {
 
-                return ServiceResult<T>.FailureResult(ex.Message);
+                return Acx.FailureResult<T>(ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch (Exception ex)
             {
-                return ServiceResult<T>.FailureResult("Yeni Araç Ekleme İşlemi Başarısız Oldu");
+                return Acx.FailureResult<T>("Yeni Araç Ekleme İşlemi Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
 
             }
@@ -62,19 +64,19 @@ namespace Example.BussinesLayer.Concrate
 
                 var Data = Provider.GetVehiclesByColor(Color).OfType<T>();
 
-                return ServiceResult<List<T>>.SuccessResult(Data.ToList(), "");
+                return Acx.SuccessResult(Data.ToList(), "", System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
 
-                return ServiceResult<List<T>>.FailureResult(Ex.Message);
+                return Acx.FailureResult<List<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch
             {
 
-                return ServiceResult<List<T>>.FailureResult("İstek Başarısız Oldu");
+                return Acx.FailureResult<List<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
 
@@ -89,16 +91,16 @@ namespace Example.BussinesLayer.Concrate
                 string Message = "";
                 var RemovedItem = Provider.RemoveVehicle(ID, out Message);
 
-                return ServiceResult<T>.SuccessResult(RemovedItem, Message);
+                return Acx.SuccessResult(RemovedItem, Message, System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
-                return ServiceResult<T>.FailureResult(Ex.Message);
+                return Acx.FailureResult<T>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
-                return ServiceResult<T>.FailureResult("Silme İşlemi Başarısız Oldu");
+                return Acx.FailureResult<T>("Silme İşlemi Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
 
             }
@@ -120,18 +122,18 @@ namespace Example.BussinesLayer.Concrate
                 var Item = Provider.togglelights(ID, out Message);
 
 
-                return ServiceResult<T>.SuccessResult(Item, Message);
+                return Acx.SuccessResult(Item, Message, System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException ex)
             {
 
-                return ServiceResult<T>.FailureResult(ex.Message);
+                return Acx.FailureResult<T>(ex.Message, System.Net.HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
 
-                return ServiceResult<T>.FailureResult("Far Açma Kapama İşlemi Başarısız Oldu");
+                return Acx.FailureResult<T>("Far Açma Kapama İşlemi Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
 
@@ -149,19 +151,19 @@ namespace Example.BussinesLayer.Concrate
                 string Message = "";
                 var Data = Provider.GetALL(out Message).OfType<T>();
 
-                return ServiceResult<List<T>>.SuccessResult(Data.ToList(), Message);
+                return Acx.SuccessResult(Data.ToList(), Message, System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
 
-                return ServiceResult<List<T>>.FailureResult(Ex.Message);
+                return Acx.FailureResult<List<T>>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch
             {
 
-                return ServiceResult<List<T>>.FailureResult("İstek Başarısız Oldu");
+                return Acx.FailureResult<List<T>>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
         }
@@ -174,19 +176,19 @@ namespace Example.BussinesLayer.Concrate
                 string Message = "";
                 var Data = Provider.Get(ID,out Message);
 
-                return ServiceResult<T>.SuccessResult(Data, Message);
+                return Acx.SuccessResult(Data, Message, System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException Ex)
             {
 
-                return ServiceResult<T>.FailureResult(Ex.Message);
+                return Acx.FailureResult<T>(Ex.Message, System.Net.HttpStatusCode.BadRequest);
 
             }
             catch
             {
 
-                return ServiceResult<T>.FailureResult("İstek Başarısız Oldu");
+                return Acx.FailureResult<T>("İstek Başarısız Oldu", System.Net.HttpStatusCode.InternalServerError);
 
             }
         }

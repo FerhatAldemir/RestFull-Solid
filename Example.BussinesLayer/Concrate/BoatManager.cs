@@ -28,6 +28,7 @@ namespace Example.BussinesLayer.Concrate
             Vehicles TableModel = Model;
             var UserId = acx.HttpContext.GetUserId();
             TableModel.UserID = UserId;
+            TableModel.VehicleType = VehicleType.Boat;
             VehiclesRepoStory.Add(TableModel);
             return TableModel;
         }

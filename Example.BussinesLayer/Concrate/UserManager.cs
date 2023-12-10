@@ -12,6 +12,7 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace Example.BussinesLayer.Concrate
 {
     public class UserManager : IUserService
@@ -27,16 +28,29 @@ namespace Example.BussinesLayer.Concrate
 
         public ServiceResult<User> Add(User Item)
         {
-            return ServiceResult<User>.SuccessResult(RepoStory.Add(Item),"Kullanıcı Oluşturuldu");
+            try
+            {
+                return Context.SuccessResult(RepoStory.Add(Item), "Kullanıcı Oluşturuldu",System.Net.HttpStatusCode.OK);
+            }
+            catch (Exception Ex)
+            {
+
+                return Context.FailureResult<User>("Kullanıcı Oluşturuldu", System.Net.HttpStatusCode.BadRequest);
+
+            }
+            
         }
 
         public ServiceResult<object> GetToken(string Username,string Password)
         {
             if (!RepoStory.Any(x => x.UserName == Username && x.Password == Password))
-            {   
-                return ServiceResult<object>.FailureResult("Kullanıcı Adı Veya Parola Doğrulanamdı");
+            {
 
+                
 
+                return Context.FailureResult<object>("Kullanıcı Adı Veya Parola Doğrulanamdı", System.Net.HttpStatusCode.Unauthorized);
+
+                 
             }
             else
             {
@@ -59,12 +73,12 @@ namespace Example.BussinesLayer.Concrate
                     );
 
                  
-                return ServiceResult<object>.SuccessResult(new
+                return Context.SuccessResult<object>(new
                 {
                     Token = new JwtSecurityTokenHandler().WriteToken(token),
                     Expiration = token.ValidTo
 
-                } , "Token Alma İşlemi Başarılı");
+                } , "Token Alma İşlemi Başarılı", System.Net.HttpStatusCode.Accepted);
             }
 
             

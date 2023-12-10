@@ -26,20 +26,20 @@ namespace Api.Controllers
         [HttpGet("{ID:int}")]
         public ServiceResult<Car> getCar(int ID) => Vehicles.get<Car>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Car>> getCars(Color color) => Vehicles.GetVehiclesByColor<Car>(color);
+        public ServiceResult<List<Car>> getCarsByColor(Color color) => Vehicles.GetVehiclesByColor<Car>(color);
         [HttpGet]
         public ServiceResult<List<Bus>> getAllBus() => Vehicles.getAll<Bus>();
         [HttpGet("{ID:int}")]
         public ServiceResult<Bus> getBus(int ID) => Vehicles.get<Bus>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Bus>> getBuses(Color color) => Vehicles.GetVehiclesByColor<Bus>(color);
+        public ServiceResult<List<Bus>> getBusesByColor(Color color) => Vehicles.GetVehiclesByColor<Bus>(color);
 
         [HttpGet]
         public ServiceResult<List<Boat>> getAllBoat() => Vehicles.getAll<Boat>();
         [HttpGet("{ID:int}")]
         public ServiceResult<Boat> getBoat(int ID) => Vehicles.get<Boat>(ID);
         [HttpGet("{color:int}")]
-        public ServiceResult<List<Boat>> getBoats(Color color) => Vehicles.GetVehiclesByColor<Boat>(color);
+        public ServiceResult<List<Boat>> getBoatsByColor(Color color) => Vehicles.GetVehiclesByColor<Boat>(color);
 
 
 
@@ -54,16 +54,16 @@ namespace Api.Controllers
 
         //Normalde Güncelleme İşlemi Olduğu için Put olmalıyıdı bu attr ama gönderilen metinde post yapıalcak dendiği için post yaptım
         [HttpPost("{carId:int}")]
-        public IActionResult carLightControl(int carId) => Ok(Vehicles.togglelights<Car>(carId));
+        public ServiceResult<Car> carLightControl(int carId) => Vehicles.togglelights<Car>(carId);
         [HttpPost("{carId:int}")]
-        public IActionResult BusLightControl(int carId) => Ok(Vehicles.togglelights<Bus>(carId));
+        public ServiceResult<Bus> BusLightControl(int carId) => Vehicles.togglelights<Bus>(carId);
 
         [HttpDelete("{carId:int}")]
-        public IActionResult removeCar(int carId) => Ok(Vehicles.RemoveVehicle<Car>(carId));
+        public ServiceResult<Car> removeCar(int carId) => Vehicles.RemoveVehicle<Car>(carId);
         [HttpDelete("{carId:int}")]
-        public IActionResult removeBus(int carId) => Ok(Vehicles.RemoveVehicle<Bus>(carId));
+        public ServiceResult<Bus> removeBus(int carId) => Vehicles.RemoveVehicle<Bus>(carId);
         [HttpDelete("{carId:int}")]
-        public IActionResult removeBoat(int carId) => Ok(Vehicles.RemoveVehicle<Boat>(carId));
+        public ServiceResult<Boat> removeBoat(int carId) => Vehicles.RemoveVehicle<Boat>(carId);
 
 
 

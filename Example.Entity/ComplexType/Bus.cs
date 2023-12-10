@@ -10,6 +10,8 @@ namespace Example.Entity.ComplexType
 {
     public class Bus:Vehicle
     {
+        public LightStatuType Light { get; set; }
+        public bool Wheels { get; set; }
         public static implicit operator Bus(Vehicles Table)
         {
             if (Table == null) return null;
@@ -17,7 +19,8 @@ namespace Example.Entity.ComplexType
             {
                 Color = Table.VehicleColor,
                 ID = Table.ID,
-
+                Light = Table.Light,
+                Wheels = Table.Wheels
             };
 
 

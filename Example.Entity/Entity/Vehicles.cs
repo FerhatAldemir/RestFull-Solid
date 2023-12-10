@@ -35,10 +35,19 @@ namespace Example.Entity.Entity
 
             };
         }
+        public static implicit operator Vehicles(Bus v)
+        {
+            return new Vehicles
+            {
+                Light = v.Light,
+                VehicleType = VehicleType.Car,
+                VehicleColor = v.Color,
+                Wheels = v.Wheels
 
 
 
-
+            };
+        }
         public static implicit operator Vehicles(Vehicle v)
         {
             return new Vehicles

@@ -14,6 +14,8 @@ using Example.BussinesLayer.Abstract;
 using Example.BussinesLayer.Concrate;
 using Microsoft.AspNetCore.Http;
 using Example.Entity.ComplexType;
+using Example.CORE.Model;
+using System.Net;
 
 public static class Extensions
 {
@@ -33,22 +35,39 @@ public static class Extensions
     }
 
 
+    public static ServiceResult<T> SuccessResult<T>(this IHttpContextAccessor Context, T Data, string Message, HttpStatusCode statusCode = HttpStatusCode.Accepted)
+    {
 
+        Context.HttpContext.Response.StatusCode = (int)statusCode;
+
+
+        return ServiceResult<T>.SuccessResult(Data,Message,(int)statusCode);
+    }
+
+
+    public static ServiceResult<T> FailureResult<T>(this IHttpContextAccessor Context, string Message, HttpStatusCode statusCode = HttpStatusCode.InternalServerError)
+    {
+
+        Context.HttpContext.Response.StatusCode = (int)statusCode;
+
+
+        return ServiceResult<T>.FailureResult(Message, (int)statusCode);
+    }
     public static void SetIOC(this IServiceCollection IOC)
-    { 
+    {
 
         IOC.AddScoped<IUserRepoStory, UserRepoStoryManager>();
         IOC.AddScoped<IUserService, UserManager>();
         IOC.AddScoped<IVehiclesRepoStory, VehiclesRepoStoryManager>();
         IOC.AddScoped<IVehicles, VehiclesManager>();
         IOC.AddScoped<ICheckDataBase, CheckDataBase>();
-        IOC.AddScoped<IVehicleFactory<Car>,CarManager>();
-        IOC.AddScoped<IVehicleFactory<Bus>,BusManager>();
+        IOC.AddScoped<IVehicleFactory<Car>, CarManager>();
+        IOC.AddScoped<IVehicleFactory<Bus>, BusManager>();
         IOC.AddScoped<IVehicleFactory<Boat>, BoatManager>();
 
 
         var Config = IOC.BuildServiceProvider().GetRequiredService<IConfiguration>();
-        
+
         Settings.Instance.ConnectionString = Config.GetConnectionString("DefaultConnection");
 
         var Check = IOC.BuildServiceProvider().GetRequiredService<ICheckDataBase>();

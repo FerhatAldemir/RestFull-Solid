@@ -1,4 +1,5 @@
 ﻿using Example.BussinesLayer.Abstract;
+using Example.CORE.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace Api.Controllers
             UserService = userService;
         }
         [HttpGet("{UserName}/{Password}")]
-        public IActionResult GetToken(string UserName, string Password) => Ok(UserService.GetToken(UserName,Password));
+        public ServiceResult<object> GetToken(string UserName, string Password) => UserService.GetToken(UserName, Password);
 
 
         [HttpPost("{UserName}/{Password}")]

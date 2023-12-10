@@ -119,4 +119,4 @@ We split the interfaces according to the operations of vehicle types.
 
 Dependency Inversion
 <br/>
-We eliminated the superclass dependency in vehicle addition operations.
+We eliminated the subclass dependency in vehicle addition operations.

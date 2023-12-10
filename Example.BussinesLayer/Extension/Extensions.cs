@@ -64,6 +64,8 @@ public static class Extensions
         IOC.AddScoped<IVehicleFactory<Car>, CarManager>();
         IOC.AddScoped<IVehicleFactory<Bus>, BusManager>();
         IOC.AddScoped<IVehicleFactory<Boat>, BoatManager>();
+        IOC.AddScoped<IToggleLight<Car>, CarManager>();
+        IOC.AddScoped<IremoveVehicle<Car>, CarManager>();
 
 
         var Config = IOC.BuildServiceProvider().GetRequiredService<IConfiguration>();

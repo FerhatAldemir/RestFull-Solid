@@ -87,7 +87,7 @@ namespace Example.BussinesLayer.Concrate
 
             try
             {
-                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
+                IremoveVehicle<T> Provider = ServiceProvider.GetService<IremoveVehicle<T>>() ?? throw new Exception();
                 string Message = "";
                 var RemovedItem = Provider.RemoveVehicle(ID, out Message);
 
@@ -117,7 +117,7 @@ namespace Example.BussinesLayer.Concrate
         {
             try
             {
-                IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
+                IToggleLight<T> Provider = ServiceProvider.GetService<IToggleLight<T>>() ?? throw new Exception();
                 var Message = "";
                 var Item = Provider.togglelights(ID, out Message);
 

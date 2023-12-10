@@ -58,20 +58,8 @@ namespace Example.BussinesLayer.Concrate
             if (!Vehicles.Any()) throw new undefinedException("Tekne Türünde bir Araç Bulunamadı");
             return Vehicles.ToList();
         }
+ 
 
-        public Boat RemoveVehicle(int ID,out string Message)
-        {
-            var UserId = acx.HttpContext.GetUserId();
-            var RemovedItem = VehiclesRepoStory.Remove(x => x.UserID == UserId && x.ID == ID && x.VehicleType == VehicleType.Boat);
-            if (object.Equals(RemovedItem, null)) throw new undefinedException($"Listenizde {ID} Referanslı Bir Araç Bulunamadı");
-            Message = $"{ID} Referanslı Tekne Silindi";
-            return RemovedItem;
-        }
-
-        public Boat togglelights(int ID,out string Message)
-        {
-            Message = "";
-            return default(Boat);
-        }
+        
     }
 }

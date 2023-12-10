@@ -60,36 +60,6 @@ namespace Example.BussinesLayer.Concrate
             return Vehicles.ToList();
         }
 
-        public Bus RemoveVehicle(int ID,out string Message)
-        {
-            var UserId = acx.HttpContext.GetUserId();
-            var RemovedItem = VehiclesRepoStory.Remove(x => x.UserID == UserId && x.ID == ID && x.VehicleType == VehicleType.Bus);
-            if (object.Equals(RemovedItem, null)) throw new undefinedException($"Listenizde {ID} Referanslı Bir Araç Bulunamadı");
-            Message = $"{ID} Referanslı Otobüs Silindi";
-            return RemovedItem;
-        }
-
-        public Bus togglelights(int ID,out string Message)
-        {
-            var UserId = acx.HttpContext.GetUserId();
-            Vehicles VehicleItem = VehiclesRepoStory.Get(x => x.ID == ID && x.VehicleType == VehicleType.Bus && x.UserID == UserId);
-            if (VehicleItem == null) throw new undefinedException("Farını Kapatmak İstediğiniz Araç Bulunamadı");
-
-            if (VehicleItem.Light == LightStatuType.Close)
-            {
-                VehicleItem.Light = LightStatuType.Open;
-                Message = "Farlar Açıldı";
-
-            }
-
-            else
-            {
-                Message = "Farlar Kapatıldı";
-                VehicleItem.Light = LightStatuType.Close;
-            }
-
-            VehiclesRepoStory.Update(VehicleItem);
-            return VehicleItem;
-        }
+ 
     }
 }

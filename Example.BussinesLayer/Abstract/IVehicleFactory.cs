@@ -15,10 +15,8 @@ namespace Example.BussinesLayer.Abstract
     public interface IVehicleFactory<T>
     {
         public  List<T> GetVehiclesByColor(Color Color);
-        public T RemoveVehicle(int ID,out string Message);  
+      
         public T addVehicle(T Model);  
-        public T togglelights(int ID,out string Message);
-
         public List<T> GetALL(out string Message);
         public T Get(int ID, out string Message);
     }

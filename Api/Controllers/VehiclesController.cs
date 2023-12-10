@@ -55,16 +55,9 @@ namespace Api.Controllers
         //Normalde Güncelleme İşlemi Olduğu için Put olmalıyıdı bu attr ama gönderilen metinde post yapıalcak dendiği için post yaptım
         [HttpPost("{carId:int}")]
         public ServiceResult<Car> carLightControl(int carId) => Vehicles.togglelights<Car>(carId);
-        [HttpPost("{carId:int}")]
-        public ServiceResult<Bus> BusLightControl(int carId) => Vehicles.togglelights<Bus>(carId);
-
         [HttpDelete("{carId:int}")]
         public ServiceResult<Car> removeCar(int carId) => Vehicles.RemoveVehicle<Car>(carId);
-        [HttpDelete("{carId:int}")]
-        public ServiceResult<Bus> removeBus(int carId) => Vehicles.RemoveVehicle<Bus>(carId);
-        [HttpDelete("{carId:int}")]
-        public ServiceResult<Boat> removeBoat(int carId) => Vehicles.RemoveVehicle<Boat>(carId);
-
+      
 
 
 

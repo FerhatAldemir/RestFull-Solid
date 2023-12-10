@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Example.BussinesLayer.Concrate
 {
-    internal class CarManager : IVehicleFactory<Car>
+    internal class CarManager : IVehicleFactory<Car>,IToggleLight<Car>, IremoveVehicle<Car>
     {
         public CarManager(IVehiclesRepoStory vehiclesRepoStory, IHttpContextAccessor Acx)
         {

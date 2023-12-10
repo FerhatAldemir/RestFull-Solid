@@ -14,7 +14,7 @@ DataAcceslayer => RepoStorylerin bulunduğu katman
 <br/>
 Core => Genel Tipler(araç tipleri,renk tipleri,far durum tipleri) ve Base Arayüzler çekirdek katmanında bulunmaktadır 
 <br/>
-EntityLayer => Veritabanı Satır Modelleri bu katmanda Tutulmaktadır
+EntityLayer => Veritabanı Modelleri bu katmanda Tutulmaktadır
 
 <br/>
 Kullanılan Desenler

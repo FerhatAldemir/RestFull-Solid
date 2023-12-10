@@ -7,6 +7,7 @@ using Example.CORE.Enums;
 using Example.CORE.Exception;
 using Example.CORE.Model;
 using Example.DataAccessLayer.Abstract;
+using Example.Entity.ComplexType;
 using Example.Entity.Entity;
 using Microsoft.AspNetCore.Http;
 
@@ -16,7 +17,7 @@ namespace Example.BussinesLayer.Abstract
     {
         public  List<T> GetVehiclesByColor(Color Color);
       
-        public T addVehicle(T Model);  
+        public T addVehicle(Vehicle Model);  
         public List<T> GetALL(out string Message);
         public T Get(int ID, out string Message);
     }

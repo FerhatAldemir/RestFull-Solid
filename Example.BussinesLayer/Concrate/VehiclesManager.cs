@@ -28,7 +28,7 @@ namespace Example.BussinesLayer.Concrate
             Acx = acx;
         }
 
-        public ServiceResult<T> addVehicle<T>(T Model)
+        public ServiceResult<T> addVehicle<T>(Vehicle Model) where T : Vehicle
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Example.BussinesLayer.Concrate
                 IVehicleFactory<T> Provider = ServiceProvider.GetService<IVehicleFactory<T>>() ?? throw new Exception();
 
 
-                return Acx.SuccessResult(Provider.addVehicle(Model), "Ekleme İşlemi Başarılı Oldu",System.Net.HttpStatusCode.OK);
+                return Acx.SuccessResult(Provider.addVehicle((T)Model), "Ekleme İşlemi Başarılı Oldu",System.Net.HttpStatusCode.OK);
 
             }
             catch (undefinedException ex)

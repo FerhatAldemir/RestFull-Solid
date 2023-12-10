@@ -17,7 +17,7 @@ namespace Example.BussinesLayer.Abstract
         public ServiceResult<List<T>> getAll<T>();
         public ServiceResult<T> get<T>(int ID);
         public ServiceResult<T> togglelights<T>(int ID);
-        public ServiceResult<T> addVehicle<T>(T Model);
+        public ServiceResult<T> addVehicle<T>(Vehicle Model) where T : Vehicle;
         public ServiceResult<T> RemoveVehicle<T>(int ID);
 
     }

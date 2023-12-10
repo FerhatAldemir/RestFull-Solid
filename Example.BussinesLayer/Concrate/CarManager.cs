@@ -25,9 +25,9 @@ namespace Example.BussinesLayer.Concrate
         public IVehiclesRepoStory VehiclesRepoStory { get; }
         public IHttpContextAccessor acx { get; }
 
-        public Car addVehicle(Car Model)
+        public Car addVehicle(Vehicle Model)
         {
-            Vehicles TableModel = Model;
+            Vehicles TableModel = (Car)Model;
             var UserId = acx.HttpContext.GetUserId();
             TableModel.UserID = UserId;
             VehiclesRepoStory.Add(TableModel);

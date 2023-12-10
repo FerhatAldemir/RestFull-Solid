@@ -55,7 +55,7 @@ Araç Türlerinin İşlemlerine göre Interfaceleri parçaladık
 <br/>
 5.Dependency Inversion
 <br/>
-Araç Ekleme İşlemlerinde üst sınıf bağımlılığını ortadan kaldırdık
+Araç Ekleme İşlemlerinde alt sınıf bağımlılığını ortadan kaldırdık
 
 
 English

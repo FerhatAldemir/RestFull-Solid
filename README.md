@@ -53,4 +53,4 @@ Araç Türlerinin İşlemlerine göre Interfaceleri parçaladık
 <br/>
 5.Dependency Inversion
 <br/>
-IOC contenier den istenilen araç tür providerleri çekildi
+Araç Ekleme İşlemlerinde üst sınıf bağımlılığını ortadan kaldırdık

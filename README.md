@@ -104,7 +104,7 @@ Only one task is given to each method
 
 Open/Closed
 <br/>
-We determined the types of vehicles within the method and had operations done, which adheres to the principle of being closed to modification and open to extension.
+We performed operations based on the characteristics of the Vehicle Type without changing the functionality of the methods, adhering to the principle of being closed to modification and open to extension.
 <br/>
 
 Liskov Substitution Principle

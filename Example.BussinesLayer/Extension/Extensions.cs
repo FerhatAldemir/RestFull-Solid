@@ -27,7 +27,7 @@ public static class Extensions
     public static int GetUserId(this HttpContext context)
     {
 
-        var UserId = context.User.Claims.FirstOrDefault(x => x.Type == "ID").Value;
+        var UserId = context.User.Claims.FirstOrDefault(x => x.Type == "ID")?.Value;
 
         return Convert.ToInt32(UserId);
     }

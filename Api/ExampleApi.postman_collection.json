@@ -1,0 +1,1615 @@
+{
+	"info": {
+		"_postman_id": "fe34ca0b-5c43-455d-8a55-5ef70f9d4f5d",
+		"name": "ExampleApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7860286"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "GetToken",
+							"item": [
+								{
+									"name": "{UserName}",
+									"item": [
+										{
+											"name": "{Password}",
+											"item": [
+												{
+													"name": "/api/User/GetToken/:UserName/:Password",
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/User/GetToken/:UserName/:Password",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"User",
+																"GetToken",
+																":UserName",
+																":Password"
+															],
+															"variable": [
+																{
+																	"key": "UserName",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "Password",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/User/GetToken/:UserName/:Password",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"User",
+																		"GetToken",
+																		":UserName",
+																		":Password"
+																	],
+																	"variable": [
+																		{
+																			"key": "UserName"
+																		},
+																		{
+																			"key": "Password"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "AddUser",
+							"item": [
+								{
+									"name": "{UserName}",
+									"item": [
+										{
+											"name": "{Password}",
+											"item": [
+												{
+													"name": "/api/User/AddUser/:UserName/:Password",
+													"request": {
+														"method": "POST",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/User/AddUser/:UserName/:Password",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"User",
+																"AddUser",
+																":UserName",
+																":Password"
+															],
+															"variable": [
+																{
+																	"key": "UserName",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "Password",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/User/AddUser/:UserName/:Password",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"User",
+																		"AddUser",
+																		":UserName",
+																		":Password"
+																	],
+																	"variable": [
+																		{
+																			"key": "UserName"
+																		},
+																		{
+																			"key": "Password"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Vehicles",
+					"item": [
+						{
+							"name": "getAllCar",
+							"item": [
+								{
+									"name": "/api/Vehicles/getAllCar",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/getAllCar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"getAllCar"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getAllCar",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getAllCar"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3,\n      \"wheels\": \"<boolean>\",\n      \"light\": 1\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 4,\n      \"wheels\": \"<boolean>\",\n      \"light\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getCar",
+							"item": [
+								{
+									"name": "{ID}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getCar/:ID",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getCar/:ID",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getCar",
+														":ID"
+													],
+													"variable": [
+														{
+															"key": "ID",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getCar/:ID",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getCar",
+																":ID"
+															],
+															"variable": [
+																{
+																	"key": "ID"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 3,\n    \"wheels\": \"<boolean>\",\n    \"light\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getCars",
+							"item": [
+								{
+									"name": "{color}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getCars/:color",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getCars/:color",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getCars",
+														":color"
+													],
+													"variable": [
+														{
+															"key": "color",
+															"value": "2",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getCars/:color",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getCars",
+																":color"
+															],
+															"variable": [
+																{
+																	"key": "color"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3,\n      \"wheels\": \"<boolean>\",\n      \"light\": 1\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 4,\n      \"wheels\": \"<boolean>\",\n      \"light\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getAllBus",
+							"item": [
+								{
+									"name": "/api/Vehicles/getAllBus",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/getAllBus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"getAllBus"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getAllBus",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getAllBus"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getBus",
+							"item": [
+								{
+									"name": "{ID}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getBus/:ID",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getBus/:ID",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getBus",
+														":ID"
+													],
+													"variable": [
+														{
+															"key": "ID",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getBus/:ID",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getBus",
+																":ID"
+															],
+															"variable": [
+																{
+																	"key": "ID"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getBuses",
+							"item": [
+								{
+									"name": "{color}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getBuses/:color",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getBuses/:color",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getBuses",
+														":color"
+													],
+													"variable": [
+														{
+															"key": "color",
+															"value": "2",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getBuses/:color",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getBuses",
+																":color"
+															],
+															"variable": [
+																{
+																	"key": "color"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getAllBoat",
+							"item": [
+								{
+									"name": "/api/Vehicles/getAllBoat",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/getAllBoat",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"getAllBoat"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getAllBoat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getAllBoat"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getBoat",
+							"item": [
+								{
+									"name": "{ID}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getBoat/:ID",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getBoat/:ID",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getBoat",
+														":ID"
+													],
+													"variable": [
+														{
+															"key": "ID",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getBoat/:ID",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getBoat",
+																":ID"
+															],
+															"variable": [
+																{
+																	"key": "ID"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getBoats",
+							"item": [
+								{
+									"name": "{color}",
+									"item": [
+										{
+											"name": "/api/Vehicles/getBoats/:color",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/getBoats/:color",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"getBoats",
+														":color"
+													],
+													"variable": [
+														{
+															"key": "color",
+															"value": "2",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/getBoats/:color",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"getBoats",
+																":color"
+															],
+															"variable": [
+																{
+																	"key": "color"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"color\": 3\n    },\n    {\n      \"id\": \"<integer>\",\n      \"color\": 1\n    }\n  ],\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addCar",
+							"item": [
+								{
+									"name": "/api/Vehicles/addCar",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 4,\n  \"wheels\": \"<boolean>\",\n  \"light\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/addCar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"addCar"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 4,\n  \"wheels\": \"<boolean>\",\n  \"light\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/addCar",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"addCar"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 3,\n    \"wheels\": \"<boolean>\",\n    \"light\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addBus",
+							"item": [
+								{
+									"name": "/api/Vehicles/addBus",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/addBus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"addBus"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/addBus",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"addBus"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addBoat",
+							"item": [
+								{
+									"name": "/api/Vehicles/addBoat",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Vehicles/addBoat",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Vehicles",
+												"addBoat"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"color\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/addBoat",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"addBoat"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data\": {\n    \"id\": \"<integer>\",\n    \"color\": 1\n  },\n  \"message\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"statusCode\": \"<integer>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "carLightControl",
+							"item": [
+								{
+									"name": "{carId}",
+									"item": [
+										{
+											"name": "/api/Vehicles/carLightControl/:carId",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/carLightControl/:carId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"carLightControl",
+														":carId"
+													],
+													"variable": [
+														{
+															"key": "carId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/carLightControl/:carId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"carLightControl",
+																":carId"
+															],
+															"variable": [
+																{
+																	"key": "carId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "BusLightControl",
+							"item": [
+								{
+									"name": "{carId}",
+									"item": [
+										{
+											"name": "/api/Vehicles/BusLightControl/:carId",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/BusLightControl/:carId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"BusLightControl",
+														":carId"
+													],
+													"variable": [
+														{
+															"key": "carId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/BusLightControl/:carId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"BusLightControl",
+																":carId"
+															],
+															"variable": [
+																{
+																	"key": "carId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "removeCar",
+							"item": [
+								{
+									"name": "{carId}",
+									"item": [
+										{
+											"name": "/api/Vehicles/removeCar/:carId",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/removeCar/:carId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"removeCar",
+														":carId"
+													],
+													"variable": [
+														{
+															"key": "carId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/removeCar/:carId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"removeCar",
+																":carId"
+															],
+															"variable": [
+																{
+																	"key": "carId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "removeBus",
+							"item": [
+								{
+									"name": "{carId}",
+									"item": [
+										{
+											"name": "/api/Vehicles/removeBus/:carId",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/removeBus/:carId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"removeBus",
+														":carId"
+													],
+													"variable": [
+														{
+															"key": "carId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/removeBus/:carId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"removeBus",
+																":carId"
+															],
+															"variable": [
+																{
+																	"key": "carId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "removeBoat",
+							"item": [
+								{
+									"name": "{carId}",
+									"item": [
+										{
+											"name": "/api/Vehicles/removeBoat/:carId",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Vehicles/removeBoat/:carId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Vehicles",
+														"removeBoat",
+														":carId"
+													],
+													"variable": [
+														{
+															"key": "carId",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Vehicles/removeBoat/:carId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Vehicles",
+																"removeBoat",
+																":carId"
+															],
+															"variable": [
+																{
+																	"key": "carId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

@@ -3,10 +3,12 @@ Kullanılan Teknolojiler
 Net Core 6
 <br/>
 Ef Core 6
+<br />
+JWT
 
 Proje 4 Katmandan Oluşmaktadır
 <br/>
-Bussines Layer => İşlerin Yapıldığı Katman
+Bussines Layer => Mantıksal İşlemlerin Yapıldığı Katman
 <br/>
 DataAcceslayer => RepoStorylerin bulunduğu katman
 <br/>
